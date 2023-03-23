@@ -1,7 +1,7 @@
 #include "main.h"
 /**
   * positive_or_negative - find if number is positive or negative
-  *
+  * @i: value being checked
   */
 void positive_or_negative(int i)
 {
