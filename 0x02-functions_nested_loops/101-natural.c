@@ -1,21 +1,19 @@
 #include <stdio.h>
 /**
-  * main - start
-  * Return: 0 Success
-  */
+ * main - start
+ * Return: 0 Success
+ */
 
-int main(void)
+int main()
 {
-	int a, b = 0;
-
-	while (a < 1024)
+	int sum = 0;
+	for (int i = 1; i < 1024; i++)
 	{
-		if ((a % 3 == 0) || (a % 5 == 0))
+		if (i % 3 == 0 || i % 5 == 0)
 		{
-			b += a;
+			sum += i;
 		}
-		b++;
 	}
-	printf("%d\n", b);
+	printf("%d\n", sum);
 	return (0);
 }
