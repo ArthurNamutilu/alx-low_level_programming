@@ -2,24 +2,42 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 10
-
-int main()
+/**
+  * main - start
+  * program 101-crackme.
+  * Return: 0
+  */
+int main(void)
 {
-	char password[PASSWORD_LENGTH + 1];
-	const char *charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	srand(time(NULL));
+	char password[84];
+	int index = 0, sum = 0, halfA, halfB;
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	srand(time(0));
+
+	while (sum < 2772)
 	{
-		int index = rand() % 62;
-		password[i] = charset[index];
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
 	}
 
-	password[PASSWORD_LENGTH] = '\0';
-	
-	printf("%s\n", password);
-	
-	return 0;
-}
+	password[index] = '\0';
 
+	if (sum != 2772)
+	{
+		halfA = (sum - 2772) / 2;
+		halfB = (sum - 2772) / 2;
+
+		if ((sum - 2772) % 2 != 0)
+			halfA++;
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + halfA))
+			{
+				password[index] -= halfB;
+				break;
+			}
+		}
+	}
+	printf("%s", password);
+	return (0);
+}
