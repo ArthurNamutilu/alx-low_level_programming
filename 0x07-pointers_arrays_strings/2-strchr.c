@@ -2,7 +2,7 @@
 /**
   * _strchr - locates character in string
   * @s: string
-  * @n: input
+  * @c: input
   *
   * Return: 0 no char || c if char present
   */
