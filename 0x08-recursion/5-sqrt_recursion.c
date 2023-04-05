@@ -3,7 +3,7 @@
 /**
   * _sqrt_recursion - returns squareroot of a number
   * @n: number to get squareroot
-  *
+  * @i: iterate no //
   * Return: squareroot.
   */
 int actual_sqrt(int n, int i);
