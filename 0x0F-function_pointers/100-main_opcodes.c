@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	arr = (char *)main;
 	for (j = 0; j < byt; j++)
 	{
-		if (j== byt - 1)
+		if (j == byt - 1)
 		{
 			printf("%02hhx\n", arr[j]);
 			break;
